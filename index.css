@@ -1,0 +1,265 @@
+@keyframes ghost-wiggle {
+    0% {
+        transform: rotate(0deg) opacity(100%);
+    }
+
+    24%{
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(25deg);
+    }
+    30% {
+        transform: rotate(-25deg);
+    }
+    35% {
+        transform: rotate(0deg);
+    }
+
+    66% {
+        transform: rotate(0deg);
+    }
+    65% {
+        transform: rotate(25deg);
+    }
+    67% {
+        transform: rotate(-25deg);
+    }
+    69% {
+        transform: rotate(0deg);
+    }
+100% {
+    transform: rotate(0deg);
+}
+
+}
+
+@keyframes ghost-boo {
+
+0% { 
+    transform: rotate(0deg) opacity(1);
+}
+100% {
+    transform: translateX(150px) scale(5) rotate(360deg);
+
+}
+
+
+}
+
+@keyframes witch-flight {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    18%, 35%{
+        opacity: 1;
+    }
+
+    40%{
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(1000px);
+        opacity: 0;
+    }
+
+}
+
+@keyframes howl {
+    0%, 100%{
+        opacity: 0;
+    }
+    
+    30% {
+        opacity: 1;
+    }
+
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+    
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.container {
+    position: relative;
+    width: 750px;
+    height: 900px;
+}
+
+.greeting {
+    color: orange;
+    font-size: 50px;
+    position: absolute;
+    right: 25px;
+    top: -50px
+}
+
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 1s;
+}
+
+.text {
+    color: white;
+    font-size: 80px;
+    position: absolute;
+    z-index: 10;
+    bottom: 200px;
+    left: 180px;
+
+}
+
+.text-letters {
+    display: inline-block;
+    position: absolute;
+    opacity: 0;
+    animation: howl 4s infinite;
+    color: white
+
+}
+
+.text-letters:nth-child(1) {
+top: 0px;
+left: 0px;
+font-size: 50px;
+animation-delay: 0s;
+
+}
+
+.text-letters:nth-child(2) {
+    bottom: -20px;
+    left: 45px;
+    font-size: 75px;
+    
+    animation-delay: .5s;
+    
+    }
+
+.text-letters:nth-child(3) {
+      bottom: 30px;
+      left: 90px;
+      font-size: 100px;
+      animation-delay: 1s;
+        }
+
+.text-letters:nth-child(4) {
+    bottom: 125px;
+    left: 180px;
+    font-size: 125px;
+    animation-delay: 1.5s;
+    
+        }
+
+.text-letters:nth-child(5) {
+    bottom: 200px;
+    left: 250px;
+    font-size: 175px;
+    animation-delay: 2s;
+    
+        }
+
+.text-letters:nth-child(6) {
+    bottom: 300px;
+    left: 360px;
+    font-size: 210px;
+    animation-delay: 2.5s;
+   
+        }
+
+
+
+
+
+.back-ghost {
+    background: url('./images/ghost.png') center/cover;
+    width: 100px;
+    height: 139.2px;
+    position: absolute;
+        top: 120px;
+    right: 200px;
+    z-index: 2;
+    animation: ghost-wiggle 5s linear infinite;
+
+}
+.front-ghost{
+    background: url('./images/ghost.png') center/cover;
+    width: 100px;
+    height: 139.2px;
+    position: absolute;
+        top: 120px;
+    right: 200px;
+    opacity: 0;
+    z-index: 20;
+   
+}
+
+.front-ghost:hover {
+    animation: ghost-boo 1s linear forwards;
+    opacity: 1;
+    
+}
+
+.front-image {
+    background: url('./images/mansion2.png');
+    z-index: 3;
+    transform: translateX(0);
+    
+}
+
+.werewolf{
+background: url('./images/werewolf.png') center/cover;
+z-index: 4;
+position: absolute;
+bottom: -15px;
+left: 50px;
+height: 150px;
+width: 150px;
+
+
+}
+
+.witch {
+    background: url('./images/witch2.png') center/cover;
+    background-repeat: no-repeat;
+    width: 75px;
+    height: 75px;
+    z-index: 2;
+    position: absolute;
+    top: 75px;
+    left: -250px;
+      animation: witch-flight 7s linear infinite;
+}
+
+.moon {
+    background: url('./images/moon.png');
+    background-repeat: no-repeat;
+    z-index: 1;
+    position: absolute;
+    top: 0%;
+    left: -100px;
+
+}
+
+
+
+
+/* .container:hover .front-dark-ghost {
+    transform: translateX(250px) scale(5) rotate(360deg);
+} */
